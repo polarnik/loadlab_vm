@@ -1,1 +1,8 @@
 ﻿- wordpress super cache configuration
+
+- Access log purification
+	
+    head /var/log/wordpress/access.log | awk -F '"' '{split($3, a, " "); print $1 "\"" $2 "\" " a[1] " " a[3] " \"" $4 "\""}'
+
+- Docker installation
+

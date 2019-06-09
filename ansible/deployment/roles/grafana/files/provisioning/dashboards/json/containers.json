@@ -15,8 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 3,
-  "iteration": 1557743482569,
+  "iteration": 1559042024707,
   "links": [],
   "panels": [
     {
@@ -49,7 +48,7 @@
       "fill": 1,
       "gridPos": {
         "h": 8,
-        "w": 6,
+        "w": 12,
         "x": 0,
         "y": 1
       },
@@ -252,8 +251,8 @@
       "fill": 1,
       "gridPos": {
         "h": 8,
-        "w": 6,
-        "x": 6,
+        "w": 12,
+        "x": 12,
         "y": 1
       },
       "id": 2,
@@ -441,9 +440,9 @@
       "fill": 1,
       "gridPos": {
         "h": 8,
-        "w": 6,
-        "x": 12,
-        "y": 1
+        "w": 12,
+        "x": 0,
+        "y": 9
       },
       "id": 4,
       "interval": "$interval",
@@ -640,9 +639,9 @@
       "fill": 1,
       "gridPos": {
         "h": 8,
-        "w": 6,
-        "x": 18,
-        "y": 1
+        "w": 12,
+        "x": 12,
+        "y": 9
       },
       "id": 8,
       "interval": "$interval",
@@ -833,7 +832,6 @@
       }
     }
   ],
-  "refresh": "10s",
   "schemaVersion": 18,
   "style": "dark",
   "tags": [
@@ -889,7 +887,8 @@
         "current": {
           "tags": [],
           "text": "default",
-          "value": "default"
+          "value": [
+          ]
         },
         "datasource": "$datasource",
         "definition": "",
@@ -980,5 +979,5 @@
   "timezone": "",
   "title": "LXC containers",
   "uid": "aA96g1iWk",
-  "version": 2
+  "version": 1
 }

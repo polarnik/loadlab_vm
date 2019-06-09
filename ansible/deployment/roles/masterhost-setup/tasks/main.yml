@@ -28,3 +28,8 @@
   become: yes
   package: name=httperf state=present
   when: config_only == false
+
+- name: Install chrony
+  become: yes
+  package: name=chrony state=present
+  when: config_only == false

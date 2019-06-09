@@ -161,9 +161,28 @@
                 <div>
                     <p>Запуск</p>
                     <li>
-                        start yandex-tank
-                        <span class="cmd" data-script="cd ~/workbench/yandex.tank && docker run -v $(pwd):/var/loadtest -v $SSH_AUTH_SOCK:/ssh-agent -e SSH_AUTH_SOCK=/ssh-agent --net host -it direvius/yandex-tank">                        
+                        shell
+                        <span class="cmd" data-script="cd ~/workbench/yandex.tank && docker run -v $(pwd):/var/loadtest -v $SSH_AUTH_SOCK:/ssh-agent -e SSH_AUTH_SOCK=/ssh-agent  --net host -it --entrypoint /bin/bash direvius/yandex-tank">     
                     </span></li>
+                    <li>
+                        start <a href="https://github.com/aragozin/loadlab_demo/blob/yandex.tank/master/load.1.yaml" target="_blank">load.1.yaml</a>
+                        <span class="cmd" data-script="cd ~/workbench/yandex.tank && docker run -v $(pwd):/var/loadtest -v $SSH_AUTH_SOCK:/ssh-agent -e SSH_AUTH_SOCK=/ssh-agent --net host -it direvius/yandex-tank -c load.1.yaml">                        
+                    </span></li>
+                    <li>
+                        start <a href="https://github.com/aragozin/loadlab_demo/blob/yandex.tank/master/load.2.yaml" target="_blank">load.2.yaml</a>
+                        <span class="cmd" data-script="cd ~/workbench/yandex.tank && docker run -v $(pwd):/var/loadtest -v $SSH_AUTH_SOCK:/ssh-agent -e SSH_AUTH_SOCK=/ssh-agent --net host -it direvius/yandex-tank -c load.2.yaml">                        
+                    </span></li>
+                    <li>
+                        start <a href="https://github.com/aragozin/loadlab_demo/blob/yandex.tank/master/load.3.yaml" target="_blank">load.3.yaml</a>
+                        <span class="cmd" data-script="eval $(ssh-agent -s) && ssh-add ~/.ssh/id_rsa && cd ~/workbench/yandex.tank && docker run -v ~/workbench:/var/loadtest -v $SSH_AUTH_SOCK:/ssh-agent -e SSH_AUTH_SOCK=/ssh-agent --net host -it --entrypoint /bin/bash direvius/yandex-tank -c &quot;mkdir ~/.ssh && chmod 700 ~/.ssh && printf 'Host *\n  StrictHostKeyChecking no\n' > ~/.ssh/config && chmod 600 ~/.ssh/config && cd yandex.tank && pwd && yandex-tank -c load.3.yaml&quot;">                        
+                    </span></li>
+                    <li>
+                        start <a href="https://github.com/aragozin/loadlab_demo/blob/yandex.tank/master/load.2.yaml" target="_blank">load.4.yaml</a>
+                        <span class="cmd" data-script="cd ~/workbench/yandex.tank && docker run -v $(pwd):/var/loadtest -v $SSH_AUTH_SOCK:/ssh-agent -e SSH_AUTH_SOCK=/ssh-agent --net host -it direvius/yandex-tank -c load.4.yaml">                        
+                    </span></li>
+                    <li><a href="https://overload.yandex.net/?user=4358" target="_blank">Overload</a></li>
+                    <li><a href="https://yandextank.readthedocs.io/en/latest/tutorial.html" target="_blank">Yandex.Tank documentation</a></li>
+
                 </div>
             </div>
             <div class="term-view">
@@ -183,6 +202,8 @@
             document.querySelector("#term").style.visibility = "visible";
             var ts = Math.random();
             var ecmd = encodeURI(btoa(cmd));
+            ecmd = ecmd.replace(/\+/g, "%2b");
+            console.log(ecmd);
             var uri = "http://192.168.100.149:8080/?arg=" + ecmd + "&arg=" + ts + "#";
             document.getElementById("term").src = uri;
         }

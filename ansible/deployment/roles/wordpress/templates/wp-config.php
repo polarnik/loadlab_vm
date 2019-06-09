@@ -16,16 +16,18 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', '{{ wp_db_name }}');
+define( 'WPCACHEHOME', '/srv/wordpress/wp-content/plugins/wp-super-cache/' );
+define('WP_CACHE', true);
+define('DB_NAME', 'wordpress');
 
 /** MySQL database username */
-define('DB_USER', '{{ wp_db_user }}');
+define('DB_USER', 'wordpress');
 
 /** MySQL database password */
-define('DB_PASSWORD', '{{ wp_db_password }}');
+define('DB_PASSWORD', 'secret');
 
 /** MySQL hostname */
-define('DB_HOST', '{{ mysql_host }}');
+define('DB_HOST', 'database');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
@@ -80,13 +82,13 @@ define('WPLANG', '');
  * It is strongly recommended that plugin and theme developers use WP_DEBUG
  * in their development environments.
  */
-define('WP_DEBUG', true);
+define('WP_DEBUG', False);
 
 /** Disable Automatic Updates Completely */
-define( 'AUTOMATIC_UPDATER_DISABLED', {{auto_up_disable}} );
+define( 'AUTOMATIC_UPDATER_DISABLED', True );
 
 /** Define AUTOMATIC Updates for Components. */
-define( 'WP_AUTO_UPDATE_CORE', {{core_update_level}} );
+define( 'WP_AUTO_UPDATE_CORE', False );
 
 /* That's all, stop editing! Happy blogging. */
 

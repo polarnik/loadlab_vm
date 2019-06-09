@@ -197,6 +197,16 @@
                         <span class="cmd" 
                               data-script="lxc exec web1 -- tail -f /var/log/wordpress/access.log"></span>                        
                     </li>
+                    <li>
+                        cache size
+                        <span class="cmd" 
+                              data-script="lxc exec web1 -- du -Hs /srv/wordpress/wp-content/cache"></span>                        
+                    </li>
+                    <li>
+                        clean cache
+                        <span class="cmd" 
+                              data-script="lxc exec web1 -- rm -rf /srv/wordpress/wp-content/cache/"></span>                        
+                    </li>
                 </div>
                 <div>
                     <p>web2<span class="stop-start" data-target="web2"/></p>
@@ -206,6 +216,16 @@
                         <code>tail -f /var/log/wordpress/access.log</code>
                         <span class="cmd" 
                               data-script="lxc exec web2 -- tail -f /var/log/wordpress/access.log"></span>                        
+                    </li>
+                    <li>
+                        cache size
+                        <span class="cmd" 
+                              data-script="lxc exec web2 -- du -Hs /srv/wordpress/wp-content/cache"></span>                        
+                    </li>
+                    <li>
+                        clean cache
+                        <span class="cmd" 
+                              data-script="lxc exec web2 -- rm -rf /srv/wordpress/wp-content/cache/"></span>                        
                     </li>
                 </div>
                 <div>
